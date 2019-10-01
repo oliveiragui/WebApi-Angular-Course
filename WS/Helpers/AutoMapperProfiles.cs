@@ -16,6 +16,7 @@ namespace WS.Helpers
                 .ForMember(dest => dest.Age, opt => {
                     opt.ResolveUsing(d => d.DateOfBirth.CalculateAge());
                 });
+
             CreateMap<User, UserForDetailedDto>()
                 .ForMember(dest => dest.PhotoURL, opt => {
                     opt.MapFrom(src => src.Photos.FirstOrDefault(p => p.IsMain).Url);
@@ -23,7 +24,10 @@ namespace WS.Helpers
                 .ForMember(dest => dest.Age, opt => {
                     opt.ResolveUsing(d => d.DateOfBirth.CalculateAge());
                 });
+
             CreateMap<Photo, PhotosForDetailedDto>();
+
+            CreateMap<UserForUpdateDto, User>();
         }
     }
 }
