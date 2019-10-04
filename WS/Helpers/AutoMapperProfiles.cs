@@ -32,6 +32,8 @@ namespace WS.Helpers
             CreateMap<Photo, PhotoForReturnDto>();
 
             CreateMap<PhotoForCreationDto, Photo>();
+
+            CreateMap<UserForRegisterDTO, User>();
         }
     }
 }
